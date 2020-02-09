@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "286efcb2-b760-46c5-89ad-30c5dd68c54e",
+            "Value": {
+                "id": "dac807a5-3d44-4af4-9f87-fb696faadf68",
+                "resourcePath": "sprites\\villager_up_spr\\villager_up_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "28873a29-b35d-4555-abc4-127b18712c55",
             "Value": {
                 "id": "6faf5639-4d7d-4eae-85f3-71a941ccd3f7",
@@ -98,7 +106,7 @@
             "Key": "63bcaf12-c4fc-47e0-a3c9-8f235479a395",
             "Value": {
                 "id": "36b08f17-ddf6-4333-96db-5f0b02cc21e4",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\test_rm\\test_rm.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -167,6 +175,14 @@
             }
         },
         {
+            "Key": "ac471aea-599d-43ee-ba4d-0c5231669caf",
+            "Value": {
+                "id": "3b064c25-89b6-40d3-b5e0-4a18f455715e",
+                "resourcePath": "sprites\\villager_left_spr\\villager_left_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ada9da02-f27e-4994-8fef-596867ccf897",
             "Value": {
                 "id": "3dd68a91-3855-437a-bf66-6917c571d670",
@@ -191,11 +207,27 @@
             }
         },
         {
+            "Key": "c6964182-7f20-417a-bb7c-35a08d51150d",
+            "Value": {
+                "id": "79067eb6-e8ca-400e-b31b-7c0dfde89e03",
+                "resourcePath": "sprites\\villager_down_spr\\villager_down_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "136d7613-de41-437f-beba-9029fef357a6",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d31ccf3a-0be8-4bf2-8d98-66ca5e824337",
+            "Value": {
+                "id": "5f432a67-c6f2-45ff-9581-815e7499de2b",
+                "resourcePath": "sprites\\villager_right_spr\\villager_right_spr.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

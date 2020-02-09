@@ -1,4 +1,4 @@
 /// @description Move left
 
-self.sprite_index = asset_get_index(self.sprite_set + "_left_spr")
+self.facing = "W"
 self.hspeed = -2
