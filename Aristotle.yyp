@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "3e6aa52a-cfc4-465f-848f-9fd43d3f21fe",
+            "Value": {
+                "id": "9dc534a0-a982-414f-9fd2-d7bafafdbf94",
+                "resourcePath": "views\\3e6aa52a-cfc4-465f-848f-9fd43d3f21fe.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4a18d488-59ae-47a9-9d95-b0b8e849758f",
             "Value": {
                 "id": "cbfad348-1512-4619-be11-46c3b836b2b7",
@@ -95,6 +103,14 @@
             }
         },
         {
+            "Key": "591db9e4-ce79-49bb-93dd-39c93fcca14f",
+            "Value": {
+                "id": "b323642f-063a-441f-b642-057926ef92a0",
+                "resourcePath": "fonts\\arial_fnt\\arial_fnt.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "61a51975-90a8-4286-bac2-8e5a159ab94c",
             "Value": {
                 "id": "90447e22-e971-4279-9fed-a57edea445b0",
@@ -108,6 +124,14 @@
                 "id": "36b08f17-ddf6-4333-96db-5f0b02cc21e4",
                 "resourcePath": "rooms\\test_rm\\test_rm.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "65de0cdd-89f3-42ad-95ae-8ed61a54d173",
+            "Value": {
+                "id": "fede0a83-bc49-4dd6-9448-7682a93a47b3",
+                "resourcePath": "objects\\villager_test_obj\\villager_test_obj.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -255,11 +279,27 @@
             }
         },
         {
+            "Key": "cdd70555-4871-4ff2-8d0a-a505ef40e1ce",
+            "Value": {
+                "id": "2b84cc14-53a4-43e7-8f2b-0b2bce3063b7",
+                "resourcePath": "objects\\dialogue_obj\\dialogue_obj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d31ccf3a-0be8-4bf2-8d98-66ca5e824337",
             "Value": {
                 "id": "5f432a67-c6f2-45ff-9581-815e7499de2b",
                 "resourcePath": "sprites\\villager_right_spr\\villager_right_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e0a67765-760a-4198-8c2e-58b478562fe1",
+            "Value": {
+                "id": "25e6d9b2-f6ba-4d89-8c33-cb3e660785d3",
+                "resourcePath": "datafiles_yy\\Dialogue\\test.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
