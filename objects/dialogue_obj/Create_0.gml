@@ -1,5 +1,5 @@
 /// @description Initialize variables and freeze player
-
+show_debug_message("birth")
 self.file = noone //file to open
 self.json = noone //JSON data
 self.start_line = 0//line to start printing on

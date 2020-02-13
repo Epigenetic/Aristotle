@@ -1,6 +1,6 @@
 /// @description Draw text box
 
-if(self.json != noone){ //Do nothing if haven't read in JSON yet
+if(self.json != noone && self.line_list != noone){ //Do nothing if haven't read in JSON yet
 	
 	//draw text box
 	draw_set_color(c_black)
