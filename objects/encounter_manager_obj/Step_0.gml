@@ -53,7 +53,9 @@ if(self.turn == 0){ //player's turn
 		break
 		
 		case 2: // run
-		
+		room_goto(self.return_to)
+		self.delete = true
+		return;
 		break
 	}
 	self.selection = noone
