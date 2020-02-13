@@ -1,0 +1,27 @@
+[
+	{
+		"Chance" : 0.5,
+		"Enemies" : [
+			{
+				"Type" : "Test",
+				"Health" : 10,
+				"Moveset" : "test.json"
+			}
+		]
+	},
+	{
+		"Chance" : 0.5,
+		"Enemies" : [
+				{
+					"Type" : "Test",
+					"Health" : 10,
+					"Moveset" : "test.json"
+				},
+				{
+					"Type" : "Test",
+					"Health" : 10,
+					"Moveset" : "test.json"
+				}
+			]
+		}
+		]
