@@ -1,14 +1,16 @@
-"Attacks":[
-	{
-		"Name": "Slash",
-		"Damage": 4,
-		"Variance": 2,
-		"Accuracy": 0.95
-	},
-	{
-		"Name": "Punch",
-		"Damage": 2,
-		"Variance": 1,
-		"Accuracy": 0.5
-	}				}
-]
+{
+	"Attacks":[
+		{
+			"Name": "Slash",
+			"Damage": 4,
+			"Variance": 2,
+			"Accuracy": 0.95
+		},
+		{
+			"Name": "Punch",
+			"Damage": 2,
+			"Variance": 1,
+			"Accuracy": 0.5
+		}
+	]
+}

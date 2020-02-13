@@ -3,7 +3,7 @@
 self.file = noone
 self.json = noone
 self.return_to = room
-self.enemies = ds_list_create()
+self.enemies = 0 //number of enemies left
 
 var player = instance_find(player_obj,0)
 self.player_status = player.status
