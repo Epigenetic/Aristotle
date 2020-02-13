@@ -1,5 +1,8 @@
 /// @description Load JSON object if not yet loaded and pick encounter
 
+if(self.delete)
+	instance_destroy(self)
+
 if(self.json == noone){ //Do nothing if we already read in JSON
 	
 	if(self.file == noone) //Do nothing until given file by creator
@@ -28,8 +31,10 @@ if(self.json == noone){ //Do nothing if we already read in JSON
 	self.enemies = ds_list_size(self.encounter)
 }
 
-if(self.enemies == 0) //encounter over
-	instance_destroy(self)
+if(self.enemies == 0){ //encounter over
+	room_goto(self.return_to) //Go back to where we started
+	self.delete = true
+}
 
 if(self.turn == 0){ //player's turn	
 	if(self.selection == noone)

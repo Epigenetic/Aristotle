@@ -1,9 +1,8 @@
 /// @description Clean up
 
-room_goto(self.return_to) //Go back to where we started
-
 var inst = instance_find(player_obj,0)
 inst.status = self.player_status
+inst.hspeed = 0
+inst.vspeed = 0
 
-ds_list_destroy(self.enemies)
 ds_map_destroy(self.json)

@@ -12,4 +12,6 @@ self.player_sprite = player.sprite_set
 self.turn = 0 // turn 0 = player, 1-3 = enemies
 self.selection = noone
 
+self.delete = false
+
 room_goto(combat_rm)
