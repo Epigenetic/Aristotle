@@ -1,5 +1,6 @@
 /// @description Cetntralized input handling
-if(self.input_enabled){
+
+if(self.input_enabled){ //Move palyer and change direction facing if input enabled
 	if(keyboard_check(vk_left)){
 		self.facing = "W"
 		self.hspeed = -2

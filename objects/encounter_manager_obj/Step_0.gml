@@ -36,6 +36,7 @@ if(self.enemies == 0){ //encounter over
 	self.delete = true
 }
 
+//Handle player and enemy turns
 if(self.turn == 0){ //player's turn	
 	if(self.selection == noone)
 		return;
@@ -43,7 +44,7 @@ if(self.turn == 0){ //player's turn
 	switch(self.selection){
 		case 0: //attack
 		var enemy = self.encounter[|0]
-		enemy[?"Health"] -= random(5)
+		enemy[?"Health"] -= random(5) //TODO: Actual attacks
 		if(enemy[?"Health"] <= 0)
 			self.enemies--
 		break
@@ -61,7 +62,9 @@ if(self.turn == 0){ //player's turn
 	self.selection = noone
 	self.turn++
 }else{
+	//The enmy makign a move
 	var enemy = self.encounter[|self.turn-1]
+	//Get the move set for the enemy
 	var openFile = file_text_open_read("Moveset/" + enemy[?"Moveset"])
 	var data = ""
 	while(!file_text_eof(openFile)){
@@ -70,16 +73,17 @@ if(self.turn == 0){ //player's turn
 	file_text_close(openFile)
 	
 	var moves = json_decode(data)
-	var selection = irandom(ds_list_size(moves[?"Attacks"])-1)
-	var attacks =moves[?"Attacks"]
-	var move = attacks[|selection]
-	self.player_status -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+	var selection = irandom(ds_list_size(moves[?"Attacks"])-1) // Which move to use
+	var attacks =moves[?"Attacks"] 
+	var move = attacks[|selection] //The move being used
+	self.player_status -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"]) //Deal the damage
 	
+	//Find who goes next
 	var i = 1
 	while(self.turn+i < ds_list_size(self.encounter) && ds_map_find_value(self.encounter[|self.turn+i-1],"Health") <= 0 && self.turn+i <= 3){
 		i++
 	}
 	self.turn = self.turn+i == 4 || self.turn+i >= ds_list_size(self.encounter)? 0: self.turn+i
 	
-	ds_map_destroy(moves)
+	ds_map_destroy(moves) //Clean up
 }
