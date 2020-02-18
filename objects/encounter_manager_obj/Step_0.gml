@@ -1,7 +1,9 @@
 /// @description Load JSON object if not yet loaded and pick encounter
 
-if(self.delete)
+if(self.delete){
 	instance_destroy(self)
+	return;
+}
 
 if(self.json == noone){ //Do nothing if we already read in JSON
 	

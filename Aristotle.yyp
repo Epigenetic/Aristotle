@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "3ac1e9d3-773c-4e0f-8f09-374204a0444f",
+            "Value": {
+                "id": "51283a23-36a4-4eac-a897-975b9ce194d5",
+                "resourcePath": "rooms\\start_rm\\start_rm.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "3c5cb584-dc75-4eb0-abd0-daf27f4a5837",
             "Value": {
                 "id": "f0555735-713d-4d56-a0bc-df4502b57bc1",
@@ -332,6 +340,14 @@
                 "id": "3100f3a2-6139-4759-bbbd-f3d99e5741a3",
                 "resourcePath": "views\\b1314de7-420b-439b-af32-2599af86f4b0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b379f14d-70cb-479f-9049-8adb38b8767b",
+            "Value": {
+                "id": "1b3de966-6d35-4908-9fc6-2c3e1bf857bb",
+                "resourcePath": "objects\\setup_manager_obj\\setup_manager_obj.yy",
+                "resourceType": "GMObject"
             }
         },
         {

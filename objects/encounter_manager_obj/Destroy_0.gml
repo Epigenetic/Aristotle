@@ -1,8 +1,6 @@
 /// @description Clean up
 
-var inst = instance_find(player_obj,0)
+var inst = instance_create_depth(self.player_x,self.player_y,self.depth,player_obj)
 inst.status = self.player_status //Update player health
-inst.hspeed = 0 //Make sure player doesn't start moving when we move back
-inst.vspeed = 0
 
 ds_map_destroy(self.json)

@@ -8,6 +8,8 @@ self.enemies = 0 //number of enemies left
 var player = instance_find(player_obj,0) //Copy in player information
 self.player_status = player.status
 self.player_sprite = player.sprite_set
+self.player_x = player.x
+self.player_y = player.y
 
 self.turn = 0 // turn 0 = player, 1-3 = enemies
 self.selection = noone //Player's selection of move
