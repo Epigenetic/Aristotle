@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "4171ae55-eb00-41ae-9ea5-29d91a7200ce",
+            "Value": {
+                "id": "f406fb25-aa35-4ac3-91e7-e624099a7834",
+                "resourcePath": "views\\4171ae55-eb00-41ae-9ea5-29d91a7200ce.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "4a18d488-59ae-47a9-9d95-b0b8e849758f",
             "Value": {
                 "id": "cbfad348-1512-4619-be11-46c3b836b2b7",
@@ -247,6 +255,14 @@
             }
         },
         {
+            "Key": "8bc18af0-e8f1-47c3-a4a2-d9a5c74f9b40",
+            "Value": {
+                "id": "459c3c9a-061d-4caa-b94e-db84fafe1b19",
+                "resourcePath": "objects\\list_selector_obj\\list_selector_obj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "8c7e2d7c-7653-4c76-86b2-030646f31ef4",
             "Value": {
                 "id": "4a77f37e-1db1-4279-b1f4-d6f476155a69",
@@ -327,6 +343,14 @@
             }
         },
         {
+            "Key": "ad46677b-3121-4cc2-819d-f3634849b0ba",
+            "Value": {
+                "id": "bc4e7af9-5e19-4d82-8660-c25a0006ea7e",
+                "resourcePath": "sprites\\arrow_spr\\arrow_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ada9da02-f27e-4994-8fef-596867ccf897",
             "Value": {
                 "id": "3dd68a91-3855-437a-bf66-6917c571d670",
@@ -375,6 +399,14 @@
             }
         },
         {
+            "Key": "bbc7179b-c79d-4ae8-9b88-f2916bbfebdb",
+            "Value": {
+                "id": "cca8f70b-c03b-4a7c-99e3-61335e18f880",
+                "resourcePath": "datafiles_yy\\PlayerMoves\\Punch.json.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "be9f17d7-af94-4670-9cc1-e6dc4f362493",
             "Value": {
                 "id": "b120b82d-2d18-4248-8a3e-59c13bc675fb",
@@ -396,6 +428,14 @@
                 "id": "afc236a8-7a55-489e-8bec-ee5dd225a56f",
                 "resourcePath": "sprites\\wall_spr\\wall_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c642e22c-881f-4d8b-9ce4-bd06a9ebcb3b",
+            "Value": {
+                "id": "4012d3c9-6daf-45f6-882c-431e1bb330e3",
+                "resourcePath": "datafiles_yy\\PlayerMoves\\Slash.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {

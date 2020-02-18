@@ -42,13 +42,25 @@ if(self.enemies == 0){ //encounter over
 if(self.turn == 0){ //player's turn	
 	if(self.selection == noone)
 		return;
-	
+	button_obj.active = false
 	switch(self.selection){
 		case 0: //attack
-		var enemy = self.encounter[|0]
+		/*var enemy = self.encounter[|0]
 		enemy[?"Health"] -= random(5) //TODO: Actual attacks
 		if(enemy[?"Health"] <= 0)
-			self.enemies--
+			self.enemies--*/
+		if(instance_number(list_selector_obj) == 0){
+			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
+			inst.list = self.player_moves
+			inst.type = 1
+		}
+		if(self.subselection == noone)
+			return;
+		if(instance_number(list_selector_obj) == 0){
+			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
+			inst.list = self.encounter
+			inst.type = 2
+		}
 		break
 		
 		case 1: //inventory
@@ -62,6 +74,8 @@ if(self.turn == 0){ //player's turn
 		break
 	}
 	self.selection = noone
+	self.subselection = noone
+	self.enemy_selection = noone
 	self.turn++
 }else{
 	//The enmy makign a move
@@ -88,4 +102,7 @@ if(self.turn == 0){ //player's turn
 	self.turn = self.turn+i == 4 || self.turn+i >= ds_list_size(self.encounter)? 0: self.turn+i
 	
 	ds_map_destroy(moves) //Clean up
+	
+	if(self.turn == 0)
+		button_obj.active = true
 }
