@@ -5,5 +5,5 @@ if(self.current == 1)
 else if (self.current == 3)
 	self.current = 1
 else
-	if(self.list[|self.start+self.current+1] != undefined)
+	if(self.list[|self.start+self.current+1] != undefined) //Don't move into blank spot
 		self.current++

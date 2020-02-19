@@ -50,14 +50,19 @@ if(self.turn == 0){ //player's turn
 		enemy[?"Health"] -= random(5) //TODO: Actual attacks
 		if(enemy[?"Health"] <= 0)
 			self.enemies--*/
-		if(instance_number(list_selector_obj) == 0){
+		//Create list selector to find which attack to use
+		if(instance_number(list_selector_obj) == 0 && self.subselection == noone){
 			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
 			inst.list = self.player_moves
 			inst.type = 1
 		}
+		
+		//wait for selection to be made
 		if(self.subselection == noone)
 			return;
-		if(instance_number(list_selector_obj) == 0){
+			
+		//Create list selector to pick enemy to hit unless there is only one enemy
+		if(instance_number(list_selector_obj) == 0 && self.enemies != 1){
 			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
 			inst.list = self.encounter
 			inst.type = 2
@@ -68,12 +73,13 @@ if(self.turn == 0){ //player's turn
 		
 		break
 		
-		case 2: // run
+		case 2: // run TODO: Chance of running rather than guarantee
 		room_goto(self.return_to)
 		self.delete = true
 		return;
 		break
 	}
+	//Clear state for next player move
 	self.selection = noone
 	self.subselection = noone
 	self.enemy_selection = noone
