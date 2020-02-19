@@ -43,6 +43,7 @@ if(self.turn == 0){ //player's turn
 	if(self.selection == noone)
 		return;
 	button_obj.active = false
+
 	switch(self.selection){
 		case 0: //attack
 		/*var enemy = self.encounter[|0]
