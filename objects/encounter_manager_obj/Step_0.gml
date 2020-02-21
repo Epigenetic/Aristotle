@@ -58,24 +58,25 @@ if(self.turn == 0){ //player's turn
 
 		if(self.enemy_selection == noone)
 			return;
+		if(!self.text_shown){
+			var move = json_load("PlayerMoves/",self.subselection+".json")
 		
-		var move = json_load("PlayerMoves/",self.subselection+".json")
-		
-		var skip = 0
-		var enemy
-		for(var i = 0; i < ds_list_size(self.encounter); i++){
-			if(ds_map_find_value(self.encounter[|i],"Health") == 0)
-				skip++
+			var skip = 0
+			var enemy
+			for(var i = 0; i < ds_list_size(self.encounter); i++){
+				if(ds_map_find_value(self.encounter[|i],"Health") == 0)
+					skip++
 			
-			if(i-skip == self.enemy_selection){
-				enemy = self.encounter[|i]
-				break
+				if(i-skip == self.enemy_selection){
+					enemy = self.encounter[|i]
+					break
+				}
 			}
+			var damage = move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+			enemy[?"Health"] -= damage
+			if(enemy[?"Health"] <= 0)
+				self.enemies--
 		}
-		var damage = move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
-		enemy[?"Health"] -= damage
-		if(enemy[?"Health"] <= 0)
-			self.enemies--
 		
 		if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
 			with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
