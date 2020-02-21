@@ -6,7 +6,7 @@ switch(self.type){
 	break
 	
 	case 2: //enemy selection
-	encounter_manager_obj.enemy_selection = self.list[|self.start+self.current]
+	encounter_manager_obj.enemy_selection = self.start+self.current
 	break
 	
 	case 3:
@@ -14,5 +14,4 @@ switch(self.type){
 	break
 }
 
-show_debug_message("message passed")
 instance_destroy(self)

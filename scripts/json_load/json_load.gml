@@ -1,6 +1,6 @@
-var file, path
-file = argument1
+var path,file
 path = argument0
+file = argument1
 
 var openFile = file_text_open_read(path + file)
 var data = ""

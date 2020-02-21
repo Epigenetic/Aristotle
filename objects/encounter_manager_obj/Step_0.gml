@@ -38,10 +38,6 @@ if(self.turn == 0){ //player's turn
 
 	switch(self.selection){
 		case 0: //attack
-		/*var enemy = self.encounter[|0]
-		enemy[?"Health"] -= random(5) //TODO: Actual attacks
-		if(enemy[?"Health"] <= 0)
-			self.enemies--*/
 		//Create list selector to find which attack to use
 		if(instance_number(list_selector_obj) == 0 && self.subselection == noone){
 			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
@@ -63,11 +59,22 @@ if(self.turn == 0){ //player's turn
 		if(self.enemy_selection == noone)
 			return;
 		
-		show_debug_message("subselection: " + self.subselection)
-		show_debug_message("enemy: " + json_encode(self.enemy_selection))
+		var move = json_load("PlayerMoves/",self.subselection+".json")
 		
-		var move = json_load("PlayerMoves/",self.subselection)
-		self.enemy_selection[?"Health"] -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+		var skip = 0
+		var enemy
+		for(var i = 0; i < ds_list_size(self.encounter); i++){
+			if(ds_map_find_value(self.encounter[|i],"Health") == 0)
+				skip++
+			
+			if(i-skip == self.enemy_selection){
+				enemy = self.encounter[|i]
+				break
+			}
+		}
+		enemy[?"Health"] -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+		if(enemy[?"Health"] <= 0)
+			self.enemies--
 		
 		break
 		
