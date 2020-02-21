@@ -19,4 +19,6 @@ self.enemy_selection = noone
 
 self.delete = false //whether to delete instance on next frame (need to give a frame to go from battle room to where it started)
 
+self.text_shown = false // if text box has with results has been shown yet
+
 room_goto(combat_rm)

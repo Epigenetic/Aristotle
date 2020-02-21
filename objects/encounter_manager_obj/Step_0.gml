@@ -72,9 +72,20 @@ if(self.turn == 0){ //player's turn
 				break
 			}
 		}
-		enemy[?"Health"] -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+		var damage = move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+		enemy[?"Health"] -= damage
 		if(enemy[?"Health"] <= 0)
 			self.enemies--
+		
+		if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
+			with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
+				text = "Used " + other.subselection + " and dealt " + string(damage) + " damage"
+			}
+			self.text_shown = true
+		}
+		
+		if(instance_number(dialogue_text_obj > 0))
+			return;
 		
 		break
 		
@@ -92,6 +103,7 @@ if(self.turn == 0){ //player's turn
 	self.selection = noone
 	self.subselection = noone
 	self.enemy_selection = noone
+	self.text_shown = false
 	self.turn++
 }else{
 	//The enemy making a move
