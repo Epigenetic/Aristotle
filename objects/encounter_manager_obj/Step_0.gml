@@ -84,7 +84,7 @@ if(self.turn == 0){ //player's turn
 			self.text_shown = true
 		}
 		
-		if(instance_number(dialogue_text_obj > 0))
+		if(instance_number(dialogue_text_obj) > 0)
 			return;
 		
 		break
