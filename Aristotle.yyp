@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "51ef99f1-1e19-47a9-baf2-7a23d433437d",
+            "Value": {
+                "id": "ca26f3de-9f5e-4848-bb5f-e21edcaf0c63",
+                "resourcePath": "scripts\\json_load\\json_load.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "542aa0a7-7cb9-427f-b70f-118ee0ac47f7",
             "Value": {
                 "id": "917d12c0-d401-4850-85b3-9495703e8f61",
@@ -552,7 +560,7 @@
         }
     ],
     "script_order": [
-        
+        "51ef99f1-1e19-47a9-baf2-7a23d433437d"
     ],
     "tutorial": ""
 }

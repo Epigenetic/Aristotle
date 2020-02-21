@@ -9,16 +9,8 @@ if(self.json == noone){ //Do nothing if we already read in JSON
 	
 	if(self.file == noone) //Do nothing until given file by creator
 		return;
-		
-	//read in dialogue from json file
-	var openFile = file_text_open_read(self.file)
-	var data = ""
-	while(!file_text_eof(openFile)){
-		data += file_text_readln(openFile)
-	}
-	file_text_close(openFile)
 	
-	self.json = json_decode(data)
+	self.json = json_load("",self.file)
 	
 	var chance = random(1) //Which to pick
 	var total = 0 //Total of probabilities
@@ -60,13 +52,23 @@ if(self.turn == 0){ //player's turn
 		//wait for selection to be made
 		if(self.subselection == noone)
 			return;
-			
+
 		//Create list selector to pick enemy to hit unless there is only one enemy
-		if(instance_number(list_selector_obj) == 0 && self.enemies != 1){
+		if(instance_number(list_selector_obj) == 0){
 			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
 			inst.list = self.encounter
 			inst.type = 2
 		}
+
+		if(self.enemy_selection == noone)
+			return;
+		
+		show_debug_message("subselection: " + self.subselection)
+		show_debug_message("enemy: " + json_encode(self.enemy_selection))
+		
+		var move = json_load("PlayerMoves/",self.subselection)
+		self.enemy_selection[?"Health"] -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"])
+		
 		break
 		
 		case 1: //inventory
@@ -85,17 +87,10 @@ if(self.turn == 0){ //player's turn
 	self.enemy_selection = noone
 	self.turn++
 }else{
-	//The enmy makign a move
+	//The enemy making a move
 	var enemy = self.encounter[|self.turn-1]
-	//Get the move set for the enemy
-	var openFile = file_text_open_read("Moveset/" + enemy[?"Moveset"])
-	var data = ""
-	while(!file_text_eof(openFile)){
-		data += file_text_readln(openFile)
-	}
-	file_text_close(openFile)
-	
-	var moves = json_decode(data)
+
+	var moves = json_load("Moveset/", enemy[?"Moveset"])
 	var selection = irandom(ds_list_size(moves[?"Attacks"])-1) // Which move to use
 	var attacks =moves[?"Attacks"] 
 	var move = attacks[|selection] //The move being used

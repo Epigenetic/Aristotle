@@ -4,16 +4,8 @@ if(self.json == noone){ //Do nothing if we already read in JSON
 	
 	if(self.file == noone) //Do nothing until given file by creator
 		return;
-		
-	//read in dialogue from json file
-	var openFile = file_text_open_read(self.file)
-	var data = ""
-	while(!file_text_eof(openFile)){
-		data += file_text_readln(openFile)
-	}
-	file_text_close(openFile)
 	
-	self.json = json_decode(data)
+	self.json = json_load("",self.file)
 	
 	//Split string into chunks for display
 	var dialogue = self.json[? "Message"]

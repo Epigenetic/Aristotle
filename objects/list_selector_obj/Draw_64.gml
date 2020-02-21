@@ -12,7 +12,7 @@ draw_set_font(arial_fnt)
 
 //Extract information to print accordingly
 switch(self.type){
-	case 1:
+	case 1://move selection
 	draw_text(window_get_width()/8+20,2*window_get_height()/3+20,"Select move:")
 	
 	//Draw four selected items
@@ -28,8 +28,22 @@ switch(self.type){
 	draw_self()
 	break
 	
-	case 2:
+	case 2: //enemy selection
+	draw_text(window_get_width()/8+20,2*window_get_height()/3+20,"Select enemy:")
 	
+	//Draw four selected items
+	var skip = 0
+	for(var i = 0; i < self.items_shown; i++){
+		if(self.list[|i+self.start+skip] == undefined)
+			break
+		
+		draw_text(window_get_width()/8+40+(window_get_width()/3*(i%2)),2*window_get_height()/3+80+(i>1?80:0),ds_map_find_value(self.list[|i+self.start+skip],"Type"))
+	}
+	
+	//position cursor accordingly and draw it
+	self.x = window_get_width()/8+window_get_width()/3*(self.current % 2)+15
+	self.y = 2*window_get_height()/3+80+(self.current>1?80:0)+20
+	draw_self()
 	break
 	
 	case 3:
