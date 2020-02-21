@@ -50,7 +50,7 @@ if(self.turn == 0){ //player's turn
 			return;
 
 		//Create list selector to pick enemy to hit unless there is only one enemy
-		if(instance_number(list_selector_obj) == 0){
+		if(instance_number(list_selector_obj) == 0 && self.enemy_selection == noone){
 			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
 			inst.list = self.encounter
 			inst.type = 2
