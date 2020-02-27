@@ -56,8 +56,11 @@ if(self.turn == 0){ //player's turn
 			inst.type = 2
 		}
 
+		//Wait for enemy selection
 		if(self.enemy_selection == noone)
 			return;
+			
+		// If information on damage has not been shown yet
 		if(!self.text_shown){
 			var move = json_load("PlayerMoves/",self.subselection+".json")
 		
@@ -78,6 +81,7 @@ if(self.turn == 0){ //player's turn
 				self.enemies--
 		}
 		
+		//If no text box made make it
 		if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
 			with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
 				text = "Used " + other.subselection + " and dealt " + string(damage) + " damage"
@@ -85,6 +89,7 @@ if(self.turn == 0){ //player's turn
 			self.text_shown = true
 		}
 		
+		//Wait for text box to finish
 		if(instance_number(dialogue_text_obj) > 0)
 			return;
 		
