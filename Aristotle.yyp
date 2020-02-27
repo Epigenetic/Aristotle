@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "1370e0f9-6f05-451c-8258-ca8550c28cf0",
+            "Value": {
+                "id": "088d69df-52d5-4564-b8ed-6939103e7152",
+                "resourcePath": "objects\\shopkeep_obj\\shopkeep_obj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "19c4eedd-1928-4784-b1b3-143c901385a0",
             "Value": {
                 "id": "2618b60c-63b8-4597-ba33-277079d174b4",
@@ -92,6 +100,14 @@
                 "id": "9f4b8ef5-e80d-41cf-93e9-5aca2f6d87d0",
                 "resourcePath": "sprites\\player_down_spr\\player_down_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "37b06561-5bca-44b8-8cd9-217c33fd2ecc",
+            "Value": {
+                "id": "3dc37525-3993-421f-bc11-bffb6aeb49ad",
+                "resourcePath": "views\\37b06561-5bca-44b8-8cd9-217c33fd2ecc.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -226,7 +242,7 @@
             "Key": "65de0cdd-89f3-42ad-95ae-8ed61a54d173",
             "Value": {
                 "id": "fede0a83-bc49-4dd6-9448-7682a93a47b3",
-                "resourcePath": "objects\\villager_test_obj\\villager_test_obj.yy",
+                "resourcePath": "objects\\villager_base_obj\\villager_base_obj.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -236,6 +252,14 @@
                 "id": "301a04e8-be5d-4f8a-90a7-567496980605",
                 "resourcePath": "rooms\\combat_rm\\combat_rm.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "6f10e898-a439-4a59-8c36-97341ef1616e",
+            "Value": {
+                "id": "1171ba41-0a7b-4d58-a54a-ff88496b6da4",
+                "resourcePath": "datafiles_yy\\Villagers\\blacksmith.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -335,6 +359,14 @@
             }
         },
         {
+            "Key": "a13c653e-676e-4424-b456-6442ede31087",
+            "Value": {
+                "id": "5f73410a-c192-4aaa-bc2c-24daa667fe6a",
+                "resourcePath": "views\\a13c653e-676e-4424-b456-6442ede31087.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a5653c4d-e77a-499d-bd1b-b1cb7857bd5d",
             "Value": {
                 "id": "3f57f795-976c-4ed9-babe-99c3d7671980",
@@ -364,6 +396,14 @@
                 "id": "bc4e7af9-5e19-4d82-8660-c25a0006ea7e",
                 "resourcePath": "sprites\\arrow_spr\\arrow_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ad5e0b86-1244-4875-ab86-96057654e809",
+            "Value": {
+                "id": "55275f07-a806-467a-96c5-0ebda2b27a69",
+                "resourcePath": "datafiles_yy\\Villagers\\shopkeep.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -455,11 +495,27 @@
             }
         },
         {
+            "Key": "c6704d34-0c4d-4cd7-807b-3f4fe4b32f52",
+            "Value": {
+                "id": "b2e3d9f3-e6eb-4999-b26d-9fd584b18793",
+                "resourcePath": "objects\\blacksmith_obj\\blacksmith_obj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c6964182-7f20-417a-bb7c-35a08d51150d",
             "Value": {
                 "id": "79067eb6-e8ca-400e-b31b-7c0dfde89e03",
                 "resourcePath": "sprites\\villager_down_spr\\villager_down_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c7e7cb77-7599-4d5e-a1f5-e5d9c1088f06",
+            "Value": {
+                "id": "ded3ffe2-f66c-4f40-acd0-b2123ad19c21",
+                "resourcePath": "objects\\cat_obj\\cat_obj.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -532,6 +588,14 @@
                 "id": "30050df8-9fbe-4599-ba17-d566385a549d",
                 "resourcePath": "sprites\\player_left_spr\\player_left_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f0a52eb4-0137-4a75-9ae6-09eba45c27b2",
+            "Value": {
+                "id": "4da361b6-311b-4082-95aa-6750c4034beb",
+                "resourcePath": "datafiles_yy\\Villagers\\cat.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
