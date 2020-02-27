@@ -107,24 +107,40 @@ if(self.turn == 0){ //player's turn
 	self.text_shown = false
 	self.turn++
 }else{
-	//The enemy making a move
-	var enemy = self.encounter[|self.turn-1]
+	
+	if(!self.text_shown){
+		//The enemy making a move
+		var enemy = self.encounter[|self.turn-1]
 
-	var moves = json_load("Moveset/", enemy[?"Moveset"])
-	var selection = irandom(ds_list_size(moves[?"Attacks"])-1) // Which move to use
-	var attacks =moves[?"Attacks"] 
-	var move = attacks[|selection] //The move being used
-	self.player_status -= move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"]) //Deal the damage
+		var moves = json_load("Moveset/", enemy[?"Moveset"])
+		var selection = irandom(ds_list_size(moves[?"Attacks"])-1) // Which move to use
+		var attacks =moves[?"Attacks"] 
+		var move = attacks[|selection] //The move being used
+		var damage = move[?"Damage"] + irandom_range(-1*move[?"Variance"],move[?"Variance"]) //Deal the damage
+		self.player_status -= damage
+	}
+	
+	if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
+		with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
+			text = enemy[?"Type"] + " used " + move[?"Name"] + " and dealt " + string(damage) + " damage"
+		}
+		self.text_shown = true
+		ds_map_destroy(moves) //Clean up
+	}
+	
+	if(instance_number(dialogue_text_obj) > 0)
+		return;
 	
 	//Find who goes next
 	var i = 1
 	while(self.turn+i < ds_list_size(self.encounter) && ds_map_find_value(self.encounter[|self.turn+i-1],"Health") <= 0 && self.turn+i <= 3){
 		i++
 	}
-	self.turn = self.turn+i == 4 || self.turn+i >= ds_list_size(self.encounter)? 0: self.turn+i
 	
-	ds_map_destroy(moves) //Clean up
+	//determine turn, if it is 4 wrap around to 0, if it is beyond the number of enemies, wrap aroudn to 0, otherwise increment it by i
+	self.turn = self.turn+i == 4 || self.turn+i >= ds_list_size(self.encounter)+1? 0: self.turn+i
 	
 	if(self.turn == 0)
 		button_obj.active = true
+	self.text_shown=false
 }
