@@ -3,6 +3,7 @@
 var inst = instance_create_depth(self.player_x,self.player_y,self.depth,player_obj)
 inst.status = self.player_status //Update player health
 inst.moves = self.player_moves // Pass moves list back
+inst.sprite_set = self.player_sprite
 
 //Reload all the villagers
 for(var i = 0; i < ds_list_size(global.village_list);i++){

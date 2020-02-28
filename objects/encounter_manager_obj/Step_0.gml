@@ -25,6 +25,25 @@ if(self.json == noone){ //Do nothing if we already read in JSON
 	self.enemies = ds_list_size(self.encounter)
 }
 
+//If player has died
+if(self.player_status <= 0){
+	if(ds_list_size(global.village_list) == 0){
+		instance_destroy(self)
+		room_goto(game_over_rm)
+	}else{
+		var i = irandom(ds_list_size(global.village_list)-1)
+		self.player_sprite = ds_list_find_value(global.village_list,i)
+		ds_list_delete(global.village_list,i)
+		var pos = json_load("Villagers/",self.player_sprite + ".json")
+		self.player_x = pos[?"startingx"]
+		self.player_y = pos[?"startingy"]
+		self.player_status = 100
+		ds_map_destroy(pos)
+		room_goto(self.return_to)
+		self.delete = true
+	}
+}
+
 if(self.enemies == 0){ //encounter over
 	room_goto(self.return_to) //Go back to where we started
 	self.delete = true
