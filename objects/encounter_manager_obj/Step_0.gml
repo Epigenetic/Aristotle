@@ -1,9 +1,16 @@
 /// @description Load JSON object if not yet loaded and pick encounter
 
+if(room != combat_rm && !instance_exists(death_manager_obj)){
+	self.delete = true
+}
+
 if(self.delete){
 	instance_destroy(self)
 	return;
 }
+
+if(room != combat_rm)
+	return;
 
 if(self.json == noone){ //Do nothing if we already read in JSON
 	
@@ -27,20 +34,25 @@ if(self.json == noone){ //Do nothing if we already read in JSON
 
 //If player has died
 if(self.player_status <= 0){
+	//IF there is noone to reincarnate as, game over
 	if(ds_list_size(global.village_list) == 0){
 		instance_destroy(self)
 		room_goto(game_over_rm)
 	}else{
+		//Pick a random new npc to play as
 		var i = irandom(ds_list_size(global.village_list)-1)
 		self.player_sprite = ds_list_find_value(global.village_list,i)
 		ds_list_delete(global.village_list,i)
+		
+		//Modify information to reflect new player
 		var pos = json_load("Villagers/",self.player_sprite + ".json")
 		self.player_x = pos[?"startingx"]
 		self.player_y = pos[?"startingy"]
-		self.player_status = 100
+		self.player_status = pos[?"health"]
 		ds_map_destroy(pos)
-		room_goto(self.return_to)
-		self.delete = true
+		
+		//Go back
+		room_goto(reincarnation_rm)
 	}
 }
 

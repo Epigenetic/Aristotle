@@ -17,5 +17,4 @@ switch(self.facing){ //Set the correct sprite
 	self.sprite_index = asset_get_index(self.sprite_set + "_left_spr")
 	break
 }
-show_debug_message(self.sprite_set)
 draw_self()

@@ -1,5 +1,8 @@
 /// @description Draw battle (supports 1 player and up to 3 enemies)
 
+if(room != combat_rm)
+	return;
+
 //Draw enemies
 for (var i = 0; i < ds_list_size(self.encounter);i++){
 	if(ds_map_find_value(self.encounter[|i],"Health") <= 0)

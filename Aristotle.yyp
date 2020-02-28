@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "5871af24-55e5-49bb-8a9c-77d3b26aca13",
+            "Value": {
+                "id": "19e4ee6f-92bc-41f5-a678-e5ae37fb73e6",
+                "resourcePath": "rooms\\reincarnation_rm\\reincarnation_rm.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "591db9e4-ce79-49bb-93dd-39c93fcca14f",
             "Value": {
                 "id": "b323642f-063a-441f-b642-057926ef92a0",
@@ -292,6 +300,14 @@
                 "id": "301a04e8-be5d-4f8a-90a7-567496980605",
                 "resourcePath": "rooms\\combat_rm\\combat_rm.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "6c5e3f99-9f57-4de4-be9a-9bec6ee9c666",
+            "Value": {
+                "id": "569339d7-b31a-4c4e-ac2a-07fcbee2daf2",
+                "resourcePath": "sprites\\you_died_spr\\you_died_spr.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -687,6 +703,14 @@
             }
         },
         {
+            "Key": "dbce9c44-a766-443d-8fd2-2189e2a97086",
+            "Value": {
+                "id": "6acdf5d8-0e9c-4a7d-9a22-b8afa1b776b1",
+                "resourcePath": "objects\\death_manager_obj\\death_manager_obj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "df2caf89-7a59-46b1-9300-4a3649cc37c8",
             "Value": {
                 "id": "41f746dc-1e69-489d-af33-66ab801dc308",
@@ -738,7 +762,7 @@
             "Key": "f31bd270-a5d4-443e-8bdd-09b728231d60",
             "Value": {
                 "id": "6c4d813a-e61f-46b7-a2c4-ef4cdac4d14b",
-                "resourcePath": "sprites\\game_over_sp\\game_over_sp.yy",
+                "resourcePath": "sprites\\game_over_spr\\game_over_spr.yy",
                 "resourceType": "GMSprite"
             }
         },
