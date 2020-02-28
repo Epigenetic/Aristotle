@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "508f3996-ae5a-42b1-bb1d-5ff7ca444d48",
+            "Value": {
+                "id": "170f32ff-af9c-47f8-8e19-72f3373a05a8",
+                "resourcePath": "sprites\\cat_left_spr\\cat_left_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "51ef99f1-1e19-47a9-baf2-7a23d433437d",
             "Value": {
                 "id": "ca26f3de-9f5e-4848-bb5f-e21edcaf0c63",
@@ -271,6 +279,14 @@
             }
         },
         {
+            "Key": "6b0e005a-0e32-4aca-839c-60bd3bebed8f",
+            "Value": {
+                "id": "c98518db-7443-451f-ba35-c00d98b519f1",
+                "resourcePath": "sprites\\cat_right_spr\\cat_right_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6bcc204c-3599-41dd-aacf-95f4de9e111b",
             "Value": {
                 "id": "301a04e8-be5d-4f8a-90a7-567496980605",
@@ -284,6 +300,14 @@
                 "id": "1171ba41-0a7b-4d58-a54a-ff88496b6da4",
                 "resourcePath": "datafiles_yy\\Villagers\\blacksmith.json.yy",
                 "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "6ffc4d17-c946-441e-8163-16a8bc8f2ee5",
+            "Value": {
+                "id": "2d254894-fee0-489f-981f-5e238c41fbb9",
+                "resourcePath": "sprites\\cat_up_spr\\cat_up_spr.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -511,6 +535,14 @@
             }
         },
         {
+            "Key": "bbd8aee8-f5ca-4ffa-893d-1f9c6f938220",
+            "Value": {
+                "id": "24e03a92-fca7-4e9d-99c8-bd2a2c632027",
+                "resourcePath": "sprites\\cat_down_spr\\cat_down_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "be9f17d7-af94-4670-9cc1-e6dc4f362493",
             "Value": {
                 "id": "b120b82d-2d18-4248-8a3e-59c13bc675fb",
@@ -604,6 +636,14 @@
                 "id": "9402e6df-c44c-4bc0-a207-22c888693eba",
                 "resourcePath": "sprites\\buttons_spr\\buttons_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cc4dc735-81e2-4e49-abea-e871305d585d",
+            "Value": {
+                "id": "b325c688-8974-4773-8fec-e3e9e6dcdc60",
+                "resourcePath": "views\\cc4dc735-81e2-4e49-abea-e871305d585d.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
