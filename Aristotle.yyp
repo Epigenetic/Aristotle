@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "6903c9bf-0921-407f-962a-9df3d5335258",
+            "Value": {
+                "id": "987adfb0-186f-4a78-95ab-6a8a1807a5a1",
+                "resourcePath": "sprites\\shopkeep_battle_spr\\shopkeep_battle_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6bcc204c-3599-41dd-aacf-95f4de9e111b",
             "Value": {
                 "id": "301a04e8-be5d-4f8a-90a7-567496980605",
@@ -323,6 +331,14 @@
             "Value": {
                 "id": "d3e9fe0e-e15d-47d3-bd2c-519f95612025",
                 "resourcePath": "sprites\\player_battle_spr\\player_battle_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "832002f2-732a-4e34-b22b-9e118779f2e3",
+            "Value": {
+                "id": "6e662f08-8600-482e-99c2-1eca301b7f15",
+                "resourcePath": "sprites\\blacksmith_battle_spr\\blacksmith_battle_spr.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -723,6 +739,14 @@
             "Value": {
                 "id": "23da5638-42d6-4954-ba47-1b0d51fe2a91",
                 "resourcePath": "sprites\\blacksmith_down_spr\\blacksmith_down_spr.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fc0e90fa-8780-465d-bf62-ebf6d452a89d",
+            "Value": {
+                "id": "6399e570-d3e3-4cf7-be16-ff3a98953bc1",
+                "resourcePath": "sprites\\cat_battle_spr\\cat_battle_spr.yy",
                 "resourceType": "GMSprite"
             }
         },
