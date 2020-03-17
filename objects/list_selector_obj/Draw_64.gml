@@ -32,12 +32,11 @@ switch(self.type){
 	draw_text(window_get_width()/8+20,2*window_get_height()/3+20,"Select enemy:")
 	
 	//Draw four selected items
-	var skip = 0
 	for(var i = 0; i < self.items_shown; i++){
-		if(self.list[|i+self.start+skip] == undefined)
+		if(self.list[|i+self.start] == undefined)
 			break
 		
-		draw_text(window_get_width()/8+40+(window_get_width()/3*(i%2)),2*window_get_height()/3+80+(i>1?80:0),ds_map_find_value(self.list[|i+self.start+skip],"Type"))
+		draw_text(window_get_width()/8+40+(window_get_width()/3*(i%2)),2*window_get_height()/3+80+(i>1?80:0),ds_map_find_value(self.list[|i+self.start],"Type"))
 	}
 	
 	//position cursor accordingly and draw it
@@ -46,7 +45,21 @@ switch(self.type){
 	draw_self()
 	break
 	
-	case 3:
+	case 3: //inventory selection
+	draw_text(window_get_width()/8+20,2*window_get_height()/3+20,"Select item:")
 	
+	//Draw four selected items
+	for(var i = 0; i < self.items_shown; i++){
+		if(self.list[|i+self.start] == undefined)
+			break
+		
+		var temp = self.list[|i+self.start]
+		draw_text(window_get_width()/8+40+(window_get_width()/3*(i%2)),2*window_get_height()/3+80+(i>1?80:0),temp[0])
+	}
+	
+	//position cursor accordingly and draw it
+	self.x = window_get_width()/8+window_get_width()/3*(self.current % 2)+15
+	self.y = 2*window_get_height()/3+80+(self.current>1?80:0)+20
+	draw_self()
 	break
 }

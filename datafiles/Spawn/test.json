@@ -1,6 +1,7 @@
 [
 	{
 		"Chance" : 0.5,
+		"Drop" : "test.json",
 		"Enemies" : [
 			{
 				"Type" : "Test",
@@ -11,6 +12,7 @@
 	},
 	{
 		"Chance" : 0.5,
+		"Drop" : "test.json",
 		"Enemies" : [
 			{
 				"Type" : "Test",

@@ -1,4 +1,4 @@
-/// @description Load JSON object if not yet loaded and pick encounter
+/// @description Encounter loop
 
 if(room != combat_rm && !instance_exists(death_manager_obj)){
 	self.delete = true
@@ -113,7 +113,7 @@ if(self.turn == 0){ //player's turn
 		}
 		
 		//If no text box made make it
-		if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
+		if(instance_number(list_selector_obj) == 0 && self.subselection == noone){
 			with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
 				text = "Used " + other.subselection + " and dealt " + string(damage) + " damage"
 			}
@@ -127,7 +127,16 @@ if(self.turn == 0){ //player's turn
 		break
 		
 		case 1: //inventory
+		if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
+			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
+			inst.list = self.player_inventory
+			inst.type = 3
+		}
 		
+		//Wait for inventory selection
+		if(self.enemy_selection == noone)
+			return;
+			
 		break
 		
 		case 2: // run TODO: Chance of running rather than guarantee

@@ -1,10 +1,10 @@
 /// @description Clean list if necessary
 
 if(!self.initialized && self.list != noone && self.type != noone){
-	if(self.type == 2){
+	if(self.type == 2){ //Remove dead enemies from list
 		var temp = ds_list_create()
 		ds_list_copy(temp,self.list)
-		self.list=  temp
+		self.list =  temp
 		var i = 0
 		var offset = 0
 		while(self.list[|i-offset] != undefined){

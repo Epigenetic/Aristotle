@@ -10,7 +10,7 @@ switch(self.type){
 	break
 	
 	case 3:
-	
+	encounter_manager_obj.subselection = self.start+self.current
 	break
 }
 

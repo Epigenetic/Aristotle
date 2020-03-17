@@ -1,0 +1,12 @@
+{
+	"Drops":[
+		{
+			"Name": "Goo",
+			"Chance": 0.95
+		},
+		{
+			"Name": "Shiny Goo",
+			"Chance": 0.05
+		}
+	]
+}

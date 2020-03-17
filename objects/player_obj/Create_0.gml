@@ -5,5 +5,6 @@ self.facing = "N" //The way the player is facing
 self.input_enabled = true // Whether playercan input anything (false during dialogue)
 self.status = 100 //all health called status becaue health is a reserved global
 self.moves = noone
+self.inventory = noone
 
 randomize()
