@@ -163,25 +163,27 @@ if(self.turn == 0){ //player's turn
 				return;
 				
 			//Effect Correct enemy
-			var skip = 0
-			var enemy
-			for(var i = 0; i < ds_list_size(self.encounter); i++){
-				if(ds_map_find_value(self.encounter[|i],"Health") == 0)
-					skip++
+			if(!self.text_shown){
+				var skip = 0
+				var enemy
+				for(var i = 0; i < ds_list_size(self.encounter); i++){
+					if(ds_map_find_value(self.encounter[|i],"Health") == 0)
+						skip++
 			
-				if(i-skip == self.enemy_selection){
-					enemy = self.encounter[|i]
-					break
+					if(i-skip == self.enemy_selection){
+						enemy = self.encounter[|i]
+						break
+					}
 				}
-			}
 			
-			if(item[?"Stat"] == "Health"){//Effects health
-				enemy[?"Health"] += item[?"Effect"]
-				if(enemy[?"Health"] <= 0)
-					self.enemies--
-				display_text = "Enemy dealt " + string(enemy[?"Stat"]) + " damage."
-			}else{//TODO: Other stats
-				show_debug_message("Unhandled stat in enemy use item: " + item[?"Stat"])
+				if(item[?"Stat"] == "Health"){//Effects health
+					enemy[?"Health"] += item[?"Effect"]
+					if(enemy[?"Health"] <= 0)
+						self.enemies--
+					display_text = enemy[?"Type"] + " dealt " + string(enemy[?"Stat"]) + " damage."
+				}else{//TODO: Other stats
+					show_debug_message("Unhandled stat in enemy use item: " + item[?"Stat"])
+				}
 			}
 			
 			
@@ -194,14 +196,17 @@ if(self.turn == 0){ //player's turn
 			ds_list_delete(self.player_inventory,self.subselection)
 		}
 		
+		if(display_text == ""){
+			show_debug_message("Empty")
+		}
 		//If no text box made make it
-		if(instance_number(list_selector_obj) == 0 && self.subselection == noone){
+		if(instance_number(list_selector_obj) == 0 && !self.text_shown){
 			with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
 				text = display_text
 			}
 			self.text_shown = true
 		}
-		
+		show_debug_message(instance_number(dialogue_text_obj))
 		//Wait for text box to finish
 		if(instance_number(dialogue_text_obj) > 0)
 			return;
