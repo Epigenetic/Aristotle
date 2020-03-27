@@ -54,7 +54,7 @@ switch(self.type){
 			break
 		
 		var temp = self.list[|i+self.start]
-		draw_text(window_get_width()/8+40+(window_get_width()/3*(i%2)),2*window_get_height()/3+80+(i>1?80:0),temp[0])
+		draw_text(window_get_width()/8+40+(window_get_width()/3*(i%2)),2*window_get_height()/3+80+(i>1?80:0),temp[0] + " - " + string(temp[1]))
 	}
 	
 	//position cursor accordingly and draw it

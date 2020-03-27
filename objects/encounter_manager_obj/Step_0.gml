@@ -127,14 +127,83 @@ if(self.turn == 0){ //player's turn
 		break
 		
 		case 1: //inventory
-		if(instance_number(dialogue_text_obj) == 0 && !self.text_shown){
+		if(instance_number(dialogue_text_obj) == 0 && self.subselection == noone){
 			var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
 			inst.list = self.player_inventory
 			inst.type = 3
 		}
 		
 		//Wait for inventory selection
-		if(self.enemy_selection == noone)
+		if(self.subselection == noone)
+			return;
+			
+		var display_text = ""
+		var choice = self.player_inventory[|self.subselection]
+		var item = json_load("Items/",choice[0] + ".json")
+		
+		if(item[?"Type"] == "Player"){ //Effect to player
+			
+			if(item[?"Stat"] == "Health"){ //Effects health
+				self.player_status += item[?"Effect"]
+				display_text = "You healed for " + string(item[?"Effect"]) + " points."
+			}else{ //TODO: Other stats
+				show_debug_message("Undhandled stat in player use item: " + item[?"Stat"])
+			}
+		}else if(item[?"Type"] == "Enemy"){ //Effect to enemy
+			
+			//Create list selector to pick enemy to hit unless there is only one enemy
+			if(instance_number(list_selector_obj) == 0 && self.enemy_selection == noone){
+				var inst = instance_create_depth(button_obj.x,button_obj.y,self.depth,list_selector_obj)
+				inst.list = self.encounter
+				inst.type = 2
+			}
+			
+			//Wait for enemy selection
+			if(self.enemy_selection == noone)
+				return;
+				
+			//Effect Correct enemy
+			var skip = 0
+			var enemy
+			for(var i = 0; i < ds_list_size(self.encounter); i++){
+				if(ds_map_find_value(self.encounter[|i],"Health") == 0)
+					skip++
+			
+				if(i-skip == self.enemy_selection){
+					enemy = self.encounter[|i]
+					break
+				}
+			}
+			
+			if(item[?"Stat"] == "Health"){//Effects health
+				enemy[?"Health"] += item[?"Effect"]
+				if(enemy[?"Health"] <= 0)
+					self.enemies--
+				display_text = "Enemy dealt " + string(enemy[?"Stat"]) + " damage."
+			}else{//TODO: Other stats
+				show_debug_message("Unhandled stat in enemy use item: " + item[?"Stat"])
+			}
+			
+			
+		}else{ //No effect
+			display_text = "It had no effect"
+		}
+		
+		choice[1]--
+		if(choice[1] == 0){
+			ds_list_delete(self.player_inventory,self.subselection)
+		}
+		
+		//If no text box made make it
+		if(instance_number(list_selector_obj) == 0 && self.subselection == noone){
+			with instance_create_depth(self.x,self.y,self.depth,dialogue_text_obj){
+				text = display_text
+			}
+			self.text_shown = true
+		}
+		
+		//Wait for text box to finish
+		if(instance_number(dialogue_text_obj) > 0)
 			return;
 			
 		break

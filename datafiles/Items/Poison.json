@@ -1,0 +1,6 @@
+{
+	"Name" : "Posion",
+	"Type" : "Enemy",
+	"Stat" : "Health",
+	"Effect" : -20
+}

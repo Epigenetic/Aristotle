@@ -607,6 +607,14 @@
             }
         },
         {
+            "Key": "c142ad00-a36b-4918-9715-b73c2735352d",
+            "Value": {
+                "id": "dda6fe9c-e037-4b91-86a6-066567fcc368",
+                "resourcePath": "datafiles_yy\\Items\\Poison.json.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "c147cc04-3c37-4471-ab5a-3978ddeb414c",
             "Value": {
                 "id": "99440f87-8c60-461f-b951-86b492dba278",
@@ -767,6 +775,14 @@
             }
         },
         {
+            "Key": "efab9311-4918-4357-8053-4a583a5cf371",
+            "Value": {
+                "id": "5831fe31-1eb2-4047-9ed7-d2e07fcdccbd",
+                "resourcePath": "views\\efab9311-4918-4357-8053-4a583a5cf371.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "f0a52eb4-0137-4a75-9ae6-09eba45c27b2",
             "Value": {
                 "id": "4da361b6-311b-4082-95aa-6750c4034beb",
@@ -836,6 +852,14 @@
                 "id": "6399e570-d3e3-4cf7-be16-ff3a98953bc1",
                 "resourcePath": "sprites\\cat_battle_spr\\cat_battle_spr.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fe6a3cff-2b79-4085-b016-7166f5410bd5",
+            "Value": {
+                "id": "a594fc3a-7954-4e20-9534-d2e4a6200581",
+                "resourcePath": "datafiles_yy\\Items\\Potion.json.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {

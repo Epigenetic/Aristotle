@@ -1,0 +1,6 @@
+{
+	"Name" : "Potion",
+	"Type" : "Player",
+	"Stat" : "Health",
+	"Effect" : 20
+}
