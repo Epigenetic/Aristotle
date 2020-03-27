@@ -9,9 +9,9 @@ if room == test_rm{
 	arr[0] = "Potion"
 	arr[1] = 2
 	var arr1;
-	arr1[0] = "Bone"
+	arr1[0] = "Poison"
 	arr1[1] = 1
-	ds_list_add(inst.inventory,arr)
+	ds_list_add(inst.inventory,arr,arr1)
 	
 	for(var i = 0; i < ds_list_size(global.village_list);i++){
 		 var pos = json_load("Villagers/",ds_list_find_value(global.village_list,i)+".json")
